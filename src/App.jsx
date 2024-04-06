@@ -12,7 +12,8 @@ function App() {
 
     if (search) {
       const definition = dictionary.find(
-        (word) => word.word.toLocaleLowerCase() === search.toLocaleLowerCase()
+        (word) =>
+          word.word.toLocaleLowerCase() === search.toLocaleLowerCase().trim()
       ) || {
         meaning: "Word not found in the dictionary.",
       };
@@ -32,7 +33,7 @@ function App() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <button typeof="submit">Search</button>
+        <button type="submit">Search</button>
       </form>
       <h4>Definition: </h4>
       <p>{message}</p>
