@@ -8,18 +8,15 @@ function App() {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    setMessage("");
 
-    if (search) {
-      const definition = dictionary.find(
-        (word) =>
-          word.word.toLocaleLowerCase() === search.toLocaleLowerCase().trim()
-      ) || {
-        meaning: "Word not found in the dictionary.",
-      };
-      // console.log(definition.meaning);
-      setMessage(definition.meaning);
-    }
+    const definition = dictionary.find(
+      (word) =>
+        word.word.toLocaleLowerCase() === search.toLocaleLowerCase().trim()
+    ) || {
+      meaning: "Word not found in the dictionary.",
+    };
+    // console.log(definition.meaning);
+    setMessage(definition.meaning);
   };
 
   return (
